@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dwall_hit.wav-3daf459da98a530db0d8a3dfa9c4ff01.sample"
+
+[deps]
+
+source_file="res://Improved Game/dSound/dwall_hit.wav"
+dest_files=[ "res://.import/dwall_hit.wav-3daf459da98a530db0d8a3dfa9c4ff01.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

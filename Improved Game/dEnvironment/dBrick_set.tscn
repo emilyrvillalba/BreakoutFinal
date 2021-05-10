@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Improved Game/dArt/brick_leaf.png" type="Texture" id=1]
+[ext_resource path="res://Improved Game/dArt/brick_bone.png" type="Texture" id=2]
+[ext_resource path="res://Improved Game/dArt/brick_yellow.png" type="Texture" id=3]
+[ext_resource path="res://Improved Game/dArt/brick_squirrel.png" type="Texture" id=4]
+[ext_resource path="res://Improved Game/dArt/rainbow_bone.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 200.013, 157.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
+
+[node name="Brick" type="Node2D"]
+
+[node name="brick_leaf" type="Sprite" parent="."]
+position = Vector2( 168, 8 )
+scale = Vector2( 0.303781, 0.257252 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="brick_leaf"]
+position = Vector2( 670.167, -13.44 )
+scale = Vector2( 0.246888, 0.0987233 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brick_leaf/StaticBody2D"]
+position = Vector2( -2714.47, 136.138 )
+shape = SubResource( 1 )
+
+[node name="brick_bone" type="Sprite" parent="."]
+position = Vector2( 312, 8 )
+scale = Vector2( 0.303781, 0.257252 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="brick_bone"]
+position = Vector2( 670.167, -13.44 )
+scale = Vector2( 0.246888, 0.0987233 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brick_bone/StaticBody2D"]
+position = Vector2( -2714.46, 136.138 )
+shape = SubResource( 1 )
+
+[node name="brick_rainbow" type="Sprite" parent="."]
+position = Vector2( 597.064, 9.68179 )
+scale = Vector2( 0.303781, 0.257252 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="brick_rainbow"]
+position = Vector2( 670.167, -13.44 )
+scale = Vector2( 0.246888, 0.0987233 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brick_rainbow/StaticBody2D"]
+position = Vector2( -2714.46, 136.138 )
+shape = SubResource( 1 )
+
+[node name="brick_squirrel" type="Sprite" parent="."]
+position = Vector2( 448, 8 )
+scale = Vector2( 0.303781, 0.257252 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="brick_squirrel"]
+position = Vector2( 670.167, -13.44 )
+scale = Vector2( 0.246888, 0.0987233 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brick_squirrel/StaticBody2D"]
+position = Vector2( -2714.46, 136.138 )
+shape = SubResource( 1 )
+
+[node name="wall_yellow" type="Sprite" parent="."]
+position = Vector2( 12, 12 )
+scale = Vector2( 0.6875, 0.6875 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_yellow"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_yellow/StaticBody2D"]
+position = Vector2( -1.90735e-06, -1.90735e-06 )
+shape = SubResource( 2 )

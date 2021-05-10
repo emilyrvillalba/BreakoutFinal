@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dbrick_hit.wav-0c6da8cf60ac7bceec4944750ba6f0b8.sample"
+
+[deps]
+
+source_file="res://Improved Game/dSound/dbrick_hit.wav"
+dest_files=[ "res://.import/dbrick_hit.wav-0c6da8cf60ac7bceec4944750ba6f0b8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
