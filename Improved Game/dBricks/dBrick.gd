@@ -7,9 +7,9 @@ onready var animated_sprite = get_node("AnimatedSprite")
 var bone_frames = preload("res://Improved Game/dBricks/dframes/dbrick1_frame.tres")
 var leaf_frames = preload("res://Improved Game/dBricks/dframes/dbrick2_frame.tres")
 var squirrel_frames = preload("res://Improved Game/dBricks/dframes/dbrick0_frame.tres")
+var rainbow_frames = preload("res://Improved Game/dBricks/dframes/rainbow.tres")
 
-
-enum dFrames {BONE = 1, LEAF = 2, SQUIRREL = 0}
+enum dFrames {BONE = 1, LEAF = 2, SQUIRREL = 0, RAINBOW = 3}
 
 var current_frames = dFrames.BONE
 
@@ -26,6 +26,8 @@ func change_frames():
 			animated_sprite.frames = leaf_frames
 		dFrames.SQUIRREL:
 			animated_sprite.frames = squirrel_frames
+		dFrames.RAINBOW:
+			animated_sprite.frames = rainbow_frames
 
 			
 # Called when the node enters the scene tree for the first time.

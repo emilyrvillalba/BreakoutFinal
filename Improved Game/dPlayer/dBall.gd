@@ -10,6 +10,7 @@ var is_throwing = false
 onready var is_visible = get_node("BallVisible")
 onready var audio = get_node("AudioStreamPlayer2D")
 signal ball_hit(brick)
+signal game_over
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("throw"):
@@ -31,7 +32,7 @@ func _physics_process(delta):
 			#direction.x = get_bounce_directionx(collision)
 
 		else:
-			print(collision.collider.get_meta("brick"))
+		
 			if collision.collider.get_meta("brick"):
 				play("res://Improved Game/dSound/dbrick_hit.wav")
 				var brick = collision.collider
@@ -54,6 +55,7 @@ func play(path):
 	
 func is_game_over():
 	if not is_visible.is_on_screen():
-		print("Game over")
-		get_tree().change_scene(world)
+		emit_signal("game_over")
 		
+func _on_Dynamic_Level_level_done():
+	is_throwing = false

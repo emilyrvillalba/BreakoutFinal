@@ -8,7 +8,7 @@ const brick_class = preload("res://Improved Game/dBricks/dBrick.tscn")
 
 #brick should be this dimension
 const cell_width = 96
-const cell_height = 32
+const cell_height = 50#32
 
 var brick_arr = []
 signal level_done
@@ -34,6 +34,9 @@ func _ready():
 			elif random < 0.9:
 				var brick = brick_class.instance()
 				init_brick(brick.dFrames.LEAF, brick, row, column, false)
+			elif random < 0.92:
+				var brick = brick_class.instance()
+				init_brick(brick.dFrames.RAINBOW, brick, row, column, false)
 		
 			else:
 				var brick = brick_class.instance()
@@ -48,8 +51,7 @@ func init_brick(frame, brick, row, column, indestructable):
 		if not indestructable:
 			brick_arr.append(brick)
 
-
-func _on_ball_hit(brick):
+func _on_Ball2_ball_hit(brick):
 	var position = brick_arr.find(brick)
 	var brick_found = position != -1
 	if not brick.is_alive_after() and brick_found:
@@ -59,3 +61,4 @@ func _on_ball_hit(brick):
 	if brick_arr.size() == 0:
 		emit_signal("level done")
 		print("level done")
+
