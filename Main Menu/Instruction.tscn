@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Improved Game/Style/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Main Menu/Instruction.gd" type="Script" id=2]
+[ext_resource path="res://Main Menu/instruction_logo.png" type="Texture" id=3]
+
+[node name="Title Screne" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 912.0
+margin_bottom = 144.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Instruction[/center]"
+text = "Instruction"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = 120.0
+margin_top = 168.0
+margin_right = 896.0
+margin_bottom = 608.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+1. blah
+2. Blah
+[/center]"
+text = "
+1. blah
+2. Blah
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 752.0
+margin_top = 688.0
+margin_right = 1016.0
+margin_bottom = 746.0
+theme = ExtResource( 1 )
+text = " Back"
+icon = ExtResource( 3 )
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
