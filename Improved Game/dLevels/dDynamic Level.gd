@@ -47,7 +47,7 @@ func init_brick(frame, brick, row, column, indestructable):
 		brick.set_indestructable(indestructable)
 		add_child(brick)
 		brick.position.x = 80 + column  * cell_width
-		brick.position.y = 50 + row* cell_height
+		brick.position.y = 24 + row* cell_height
 		if not indestructable:
 			brick_arr.append(brick)
 
@@ -60,5 +60,6 @@ func _on_Ball2_ball_hit(brick):
 	
 	if brick_arr.size() == 0:
 		emit_signal("level done")
+		
 		print("level done")
 

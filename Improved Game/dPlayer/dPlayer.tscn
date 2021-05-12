@@ -6,6 +6,7 @@
 scale = Vector2( 0.5, 0.5 )
 
 [node name="player_map" type="TileMap" parent="."]
+position = Vector2( 20.1417, -128.674 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 275, 270 )
 collision_use_parent = true

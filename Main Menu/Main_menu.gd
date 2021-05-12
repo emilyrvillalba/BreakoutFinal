@@ -3,9 +3,6 @@ extends Control
 var classic_world = "res://Game_Classic/Game_Main/MainScene.tscn"
 var improve_world = "res://Improved Game/Game_Dog/DogScene.tscn"
 var instruction_world = "res://Main Menu/Instruction.tscn"
-func _ready():
-	pass
-	
 
 
 
