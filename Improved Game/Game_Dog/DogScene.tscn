@@ -42,9 +42,9 @@ margin_left = 500.0
 margin_top = -25.0
 margin_right = 540.0
 margin_bottom = 15.0
+[connection signal="level_done" from="Dynamic Level" to="LevelDone" method="_on_Dynamic_Level_level_done"]
 [connection signal="level_done" from="Dynamic Level" to="Player" method="_on_Dynamic_Level_level_done"]
 [connection signal="level_done" from="Dynamic Level" to="Ball2" method="_on_Dynamic_Level_level_done"]
-[connection signal="level_done" from="Dynamic Level" to="LevelDone" method="_on_Dynamic_Level_level_done"]
 [connection signal="ball_hit" from="Ball2" to="Dynamic Level" method="_on_Ball2_ball_hit"]
-[connection signal="game_over" from="Ball2" to="Player" method="_on_Ball2_game_over"]
 [connection signal="game_over" from="Ball2" to="GameOver" method="_on_Ball2_game_over"]
+[connection signal="game_over" from="Ball2" to="Player" method="_on_Ball2_game_over"]
