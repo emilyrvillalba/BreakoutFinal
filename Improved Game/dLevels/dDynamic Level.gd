@@ -8,7 +8,7 @@ const brick_class = preload("res://Improved Game/dBricks/dBrick.tscn")
 
 #brick should be this dimension
 const cell_width = 96
-const cell_height = 50#32
+const cell_height = 50
 
 var brick_arr = []
 signal level_done
@@ -59,7 +59,7 @@ func _on_Ball2_ball_hit(brick):
 		
 	
 	if brick_arr.size() == 0:
-		emit_signal("level done")
-		
+		emit_signal("level_done")
 		print("level done")
+		
 
