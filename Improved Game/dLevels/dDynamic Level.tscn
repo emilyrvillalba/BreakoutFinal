@@ -16,10 +16,10 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 76.3348
-margin_top = 691.171
-margin_right = 278.335
-margin_bottom = 757.171
+margin_left = 78.0
+margin_top = 691.0
+margin_right = 296.0
+margin_bottom = 751.0
 custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
 bbcode_text = "Score: 0"
