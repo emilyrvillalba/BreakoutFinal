@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Improved Game/Style/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Main Menu/Instruction.gd" type="Script" id=2]
 [ext_resource path="res://Main Menu/instruction_logo.png" type="Texture" id=3]
+[ext_resource path="res://Main Menu/namestheme.tres" type="Theme" id=4]
+[ext_resource path="res://Main Menu/rules_theme.tres" type="Theme" id=5]
+[ext_resource path="res://Main Menu/ins_theme.tres" type="Theme" id=6]
+[ext_resource path="res://Main Menu/theme.tres" type="Theme" id=7]
+[ext_resource path="res://Improved Game/dArt/brick_bone.png" type="Texture" id=8]
+[ext_resource path="res://Improved Game/dArt/brick_squirrel.png" type="Texture" id=9]
+[ext_resource path="res://Improved Game/dArt/brick_leaf.png" type="Texture" id=10]
+[ext_resource path="res://Improved Game/dArt/rainbow_bone.png" type="Texture" id=11]
+[ext_resource path="res://Game_Classic/art/brick_blue.png" type="Texture" id=12]
+[ext_resource path="res://Game_Classic/art/brick_green.png" type="Texture" id=13]
+[ext_resource path="res://Game_Classic/art/brick_grey.png" type="Texture" id=14]
+[ext_resource path="res://Main Menu/main_bg.png" type="Texture" id=15]
 
 [node name="Title Screne" type="Control"]
 anchor_right = 1.0
@@ -12,36 +24,107 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 120.0
-margin_top = 80.0
-margin_right = 912.0
-margin_bottom = 144.0
-theme = ExtResource( 1 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 520, 380 )
+scale = Vector2( 2.11382, 2.05962 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Text" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -464.0
+margin_top = -252.0
+margin_right = 480.0
+margin_bottom = 278.0
+theme = ExtResource( 5 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Instruction[/center]"
-text = "Instruction"
+bbcode_text = "
+[center]GOAL: Hit a bricks or items using the ball and paddle.
+[/center]"
+text = "
+GOAL: Hit a bricks or items using the ball and paddle.
+"
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Text" type="RichTextLabel" parent="."]
-margin_left = 120.0
-margin_top = 168.0
-margin_right = 896.0
-margin_bottom = 608.0
-theme = ExtResource( 1 )
+[node name="classicrules" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -344.0
+margin_top = -28.0
+margin_right = 112.0
+margin_bottom = 162.0
+theme = ExtResource( 6 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]
-1. blah
-2. Blah
-[/center]"
-text = "
-1. blah
-2. Blah
+bbcode_text = "Hit once to break
+Hit twice to break Unbreakable "
+text = "Hit once to break
+Hit twice to break Unbreakable "
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="improverules" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 80.0
+margin_top = -36.0
+margin_right = 472.0
+margin_bottom = 220.0
+theme = ExtResource( 6 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "Hit once to take
+Hit twice to break
+You can't kill them!
+Increase body length
+"
+text = "Hit once to take
+Hit twice to break
+You can't kill them!
+Increase body length
 "
 __meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="rules" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -440.0
+margin_top = -209.0
+margin_right = 440.0
+margin_bottom = 47.0
+theme = ExtResource( 6 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Use the left and right arrow keys to move the paddle. Press up arrow to begin.
+[/center]"
+text = "Use the left and right arrow keys to move the paddle. Press up arrow to begin.
+"
+__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -55,6 +138,101 @@ text = " Back"
 icon = ExtResource( 3 )
 align = 0
 __meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 256.0
+margin_top = 8.0
+margin_right = 1433.0
+margin_bottom = 136.0
+theme = ExtResource( 7 )
+bbcode_text = "Instructions
+"
+text = "Instructions
+"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="blue" type="Sprite" parent="."]
+position = Vector2( 120, 376 )
+scale = Vector2( 0.833333, 1 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="green" type="Sprite" parent="."]
+position = Vector2( 120, 416 )
+scale = Vector2( 0.833333, 1 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="purple" type="Sprite" parent="."]
+position = Vector2( 120, 456 )
+scale = Vector2( 0.833333, 1 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bone" type="Sprite" parent="."]
+position = Vector2( 548, 368 )
+scale = Vector2( 0.916667, 1 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="leaf" type="Sprite" parent="."]
+position = Vector2( 552, 408 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="squirrel" type="Sprite" parent="."]
+position = Vector2( 544, 452 )
+scale = Vector2( 1.16667, 1.25 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="rainbow" type="Sprite" parent="."]
+position = Vector2( 548, 496 )
+scale = Vector2( 0.916667, 1 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 168.0
+margin_top = 246.0
+margin_right = 496.0
+margin_bottom = 414.0
+theme = ExtResource( 4 )
+text = "Classic"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 544.0
+margin_top = 247.0
+margin_right = 872.0
+margin_bottom = 415.0
+theme = ExtResource( 4 )
+text = "Improved"
+__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
