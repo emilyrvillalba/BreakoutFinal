@@ -65,8 +65,8 @@ func fix_normal(normal, hit_position):
 		normal = Vector2(-0.5, 0.5) #low left
 	normal = normal.normalized()
 	return normal
+	
 func is_game_over():
 	if not is_visible.is_on_screen():
-		get_tree().change_scene(world)
 		emit_signal("game_over1")
 		

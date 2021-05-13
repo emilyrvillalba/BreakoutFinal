@@ -54,4 +54,4 @@ func _on_ball_hit(brick):
 	
 	if brick_arr.size() == 0:
 		emit_signal("level done")
-		print("level done")
+		
