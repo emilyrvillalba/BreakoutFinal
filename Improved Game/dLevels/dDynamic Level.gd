@@ -5,6 +5,11 @@ export var columns = 10
 export(int, 1, 5) var difficulty = 1 #1 to 5, 1 is easy
 
 const brick_class = preload("res://Improved Game/dBricks/dBrick.tscn")
+onready var score_text = get_node("RichTextLabel")
+
+var total_score = 0
+
+signal rainbow
 
 #brick should be this dimension
 const cell_width = 96
@@ -12,6 +17,7 @@ const cell_height = 50
 
 var brick_arr = []
 signal level_done
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,12 +60,21 @@ func init_brick(frame, brick, row, column, indestructable):
 func _on_Ball2_ball_hit(brick):
 	var position = brick_arr.find(brick)
 	var brick_found = position != -1
+	
+	if brick.is_rainbow():
+		emit_signal("rainbow")
+		print("rainbow")
+	
 	if not brick.is_alive_after() and brick_found:
 		brick_arr.remove(position)
-		
+		total_score += brick.get_score()		
+		update_score()		
 	
 	if brick_arr.size() == 0:
 		emit_signal("level_done")
 		print("level done")
 		
-
+func update_score():
+	var format_string = "Score: %s"
+	var actual_string = format_string % total_score
+	score_text.set_text(actual_string)

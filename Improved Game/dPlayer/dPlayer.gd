@@ -58,3 +58,12 @@ func _on_Dynamic_Level_level_done():
 
 func _on_Ball2_game_over():
 	is_throwing = false
+	
+func increase_length():
+	player_length += 1
+	build_player(player_length)
+	print("increase length")
+
+
+func _on_Dynamic_Level_rainbow():
+	increase_length()

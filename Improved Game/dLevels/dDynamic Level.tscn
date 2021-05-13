@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Improved Game/dLevels/dDynamic Level.gd" type="Script" id=1]
 [ext_resource path="res://Improved Game/dArt/background_tree.png" type="Texture" id=2]
+[ext_resource path="res://Main Menu/instructions.tres" type="DynamicFont" id=3]
 
 [node name="Dynamic Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -10,3 +11,19 @@ script = ExtResource( 1 )
 position = Vector2( 520, 380 )
 scale = Vector2( 0.481481, 0.469136 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 76.3348
+margin_top = 691.171
+margin_right = 278.335
+margin_bottom = 757.171
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Score: 0"
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
