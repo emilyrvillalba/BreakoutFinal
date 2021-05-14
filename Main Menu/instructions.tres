@@ -3,5 +3,5 @@
 [ext_resource path="res://Main Menu/rainyhearts.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 43
+size = 39
 font_data = ExtResource( 1 )
