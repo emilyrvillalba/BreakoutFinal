@@ -7,6 +7,9 @@ export(int, 1, 5) var difficulty = 1 #1 to 5, 1 is easy
 
 const brick_class = preload("res://Improved Game/dBricks/dBrick.tscn")
 onready var score_text = get_node("RichTextLabel")
+onready var level_text = get_node("LevelText")
+
+
 
 var total_score = 0
 var last_complete = false
@@ -23,7 +26,12 @@ signal level_done
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	load_difficulty()
+	print(difficulty)
+	var format_string = "Level: %s"
+	var actual_string = format_string % difficulty
+	level_text.set_text(actual_string)
 	
 	var audio = AudioStreamPlayer.new()
 	self.add_child(audio)
@@ -82,26 +90,27 @@ func _on_Ball2_ball_hit(brick):
 		
 		
 func update_score():
-	var format_string = "Level: %s Score: %s"
-	var actual_string = format_string % [difficulty, total_score]
+	var format_string = "Score: %s"
+	var actual_string = format_string % total_score
 	score_text.set_text(actual_string)
 
 
 func load_difficulty():
-	print("Loading...")
-
 	var save_file = File.new()
 	if not save_file.file_exists("user://savefile.save"):
-		return
+		difficulty = 1
 
 	save_file.open("user://savefile.save", File.READ)
 	difficulty = int(save_file.get_line())
 	save_file.close()
 
 func save_difficulty():
-	print("Saving...")
-
 	var save_file = File.new()
 	save_file.open("user://savefile.save", File.WRITE)
 	save_file.store_line(str(difficulty))
 	save_file.close()
+
+
+func _on_Ball2_game_over():
+	difficulty = 1
+	save_difficulty()

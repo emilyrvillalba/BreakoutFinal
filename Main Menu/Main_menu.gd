@@ -17,4 +17,3 @@ func _on_ImprovedButton_pressed():
 func _on_InstructionButton_pressed():
 	get_tree().change_scene(instruction_world)
 	
-
